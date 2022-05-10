@@ -1,0 +1,3 @@
+/mnt/c/Users/kushn/Dropbox/software/projects/Arduino/projects/CameraWebServer-still/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/kushn/Dropbox/software/projects/Arduino/projects/CameraWebServer-still/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/kushn/Dropbox/software/projects/Arduino/projects/CameraWebServer-still/cmake-build-debug/CMakeFiles/CameraWebServer_still.dir

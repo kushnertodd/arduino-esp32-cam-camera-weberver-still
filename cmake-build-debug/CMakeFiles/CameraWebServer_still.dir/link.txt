@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/CameraWebServer_still.dir/main.cpp.o -o CameraWebServer_still 
