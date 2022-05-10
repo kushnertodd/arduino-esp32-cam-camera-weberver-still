@@ -6,11 +6,18 @@ This is a modified version of this Arduino IDE ESP32-CAM CameraWebServer example
 The difference is that once you compile and upload the project, and get the camera web server URL, 
 you can run `curl` from the command line and capture a single still image:
 
-`curl `*URL*`/capture >`*image`.jpg`
+`curl `*URL*`/capture >`*image-file*``
 
+where *image* has the form `image.jpg`.
 You must put your Wifi SSID and password in CameraWebServer-still.ino.
 
-There is also a c++ program `curltest.cpp` that tests the return code from `system("curl `*URL* *arguments`)`
-for later use in running `curl` from `system` inside a c++ program and testing the return code for success.
-The URL needs to be a command-line argument.
+## `curltest`
 
+There is also a c++ program `curltest.cpp` that tests the return code from 
+`system("curl `*URL* *arguments`)`
+for later use in running `curl` from `system` inside a c++ program and testing the return code for success.
+The usage is:
+
+`./curltest `*URL* *image-file*
+
+where *image* has the form `image.jpg`.
