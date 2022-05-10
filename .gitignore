@@ -1,5 +1,6 @@
 .idea/
 *.jpg
+curltest
 
 # Prerequisites
 *.d
