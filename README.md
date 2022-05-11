@@ -6,11 +6,16 @@ This is a modified version of this Arduino IDE ESP32-CAM CameraWebServer example
 The difference is that once you compile and upload the project, and get the camera web server URL via 'reset' and the Serial Monitor, 
 you can run `curl` from the command line and capture a single still image:
 
-`curl `*URL*`/capture >`*image-file*``
+`curl `*URL*`/capture >`*image-file*
 
 where *image* has the form `image.jpg`.
 and *URL* comes from the Aduino IDE Serial Monitor window.
 You must put your Wifi SSID and password in CameraWebServer-still.ino.
+
+Before processing, the color output jpeg image must be converted to grayscale (for now, image processing will require grayscale images).
+This command should be run with `system()` after getting the image with `curl`.
+
+`jpegtran -grayscale -outfile `*outfile*`.jpg` *infile*`.jpg`
 
 ## `curltest`
 
@@ -22,3 +27,4 @@ The usage is:
 `./curltest `*URL* *image-file*
 
 where *image* has the form `image.jpg`.
+
