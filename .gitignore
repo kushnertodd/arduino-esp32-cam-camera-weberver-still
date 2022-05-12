@@ -1,5 +1,7 @@
 .idea/
+cmake-build-debug/
 *.jpg
+*.txt
 
 # Prerequisites
 *.d

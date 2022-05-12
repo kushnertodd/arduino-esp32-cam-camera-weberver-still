@@ -13,7 +13,13 @@ The steps to use are:
 
 `curl `*URL*/capture `>`*image-file.jpg*
 
-- convert the color output jpeg image to grayscale with this command:
+## Convert the color output jpeg image to grayscale 
+The camera image software runs only on grayscale images
+and ESP32-CAM images are color.
+Build and install the C [`jpegsrc.v`*version*`.tar.gz`](http://www.ijg.org/files/jpegsrc.v9e.tar.gz) 
+library for jpeg image reading/writing.
+
+Run with this command to convert the image from color to grayscale:
 
 `jpegtran -grayscale -outfile` *outfile.jpg* *infile.jpg*
 
