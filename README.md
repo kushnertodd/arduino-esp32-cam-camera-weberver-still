@@ -1,30 +1,42 @@
 # CameraWebServer-still
-This is a modified version of this Arduino IDE ESP32-CAM CameraWebServer example:
+This is a modified version of this Arduino IDE ESP32-CAM CameraWebServer example from:
 
     File/Examples/ESP32/Camera/CameraWebServer 
 
-The difference is that once you compile and upload the project, and get the camera web server URL via 'reset' and the Serial Monitor, 
-you can run `curl` from the command line and capture a single still image:
+that allows capturing a file from the command line.
 
-`curl `*URL*`/capture >`*image-file*
+The steps to use are:
+- put your Wifi SSID and password in `CameraWebServer-still.ino`
+- compile and upload the project in Arduino IDE
+- get the camera web server *URL* after 'reset' from the Serial Monitor
+- run `curl` from the command line to capture a single still image:
 
-where *image* has the form `image.jpg`.
-and *URL* comes from the Aduino IDE Serial Monitor window.
-You must put your Wifi SSID and password in CameraWebServer-still.ino.
+`curl `*URL*/capture `>`*image-file.jpg*
 
-Before processing, the color output jpeg image must be converted to grayscale (for now, image processing will require grayscale images).
-This command should be run with `system()` after getting the image with `curl`.
+- convert the color output jpeg image to grayscale with this command:
 
-`jpegtran -grayscale -outfile `*outfile*`.jpg` *infile*`.jpg`
+`jpegtran -grayscale -outfile` *outfile.jpg* *infile.jpg*
 
-## `curltest`
+## `camera_capture.sh`
 
-There is also a c++ program `curltest.cpp` that tests the return code from 
-`system("curl `*URL*`/capture` *arguments`)`
-for later use in running `curl` from `system` inside a c++ program and testing the return code for success.
-The usage is:
+This script does both of the above, captures an image and converts it to grayscale. 
 
-`./curltest `*URL* *image-file*
+The usage is
 
-where *image* has the form `image.jpg`.
+`./camera_capture.sh `*URL* *image-root*
+
+where
+
+- *URL* is as above
+- *image-root* is the root of the output filename
+
+and it produces:
+- *image-root.jpg* is the color image from the capture
+- *image-root-gray.jpg* is the grayscale version of that image
+
+so running
+
+`./camera_capture.sh http://10.33.32.20 temp`
+
+produces the color image file `temp.jpg` and the grayscale image file `temp-gray.jpg`.
 
