@@ -48,3 +48,6 @@ so running
 
 produces the color image file `image.jpg` and the grayscale image file `image-gray.jpg`.
 
+## Hardware
+This is a good [ESP32-CAM board](https://smile.amazon.com/dp/B0924JR8RZ?ref=nb_sb_ss_w_as-reorder-t1_ypp_rep_k0_1_5&amp&crid=3VXS06IO2BU36&amp&sprefix=esp32) to get. 
+[This](https://randomnerdtutorials.com/upload-code-esp32-cam-mb-usb/) shows how to hook the board into a computer via micro-USB, download the Arduino IDE to set up the camera. You can then download this software into the Arduino IDE and continue the steps from above.
