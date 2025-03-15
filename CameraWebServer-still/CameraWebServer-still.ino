@@ -31,8 +31,8 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-const char *ssid = "UNIT_228";
-const char *password = "PrincetonSkipper";
+const char *ssid = "AragonWifi";
+const char *password = "C@+@1@c4$Me";
 
 void startCameraServer();
 
